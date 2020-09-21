@@ -1477,6 +1477,8 @@ export default class SegmentLoader extends videojs.EventTarget {
         video: true
       };
 
+      // TODO: rename these variables to
+      // startingMediaInfo_ and currentMediaInfo_
       this.mediaConfig_ = trackInfo;
       this.startingMedia_ = trackInfo;
       this.logger_('trackinfo update', trackInfo);
