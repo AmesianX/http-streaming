@@ -640,7 +640,7 @@ export default class SegmentLoader extends videojs.EventTarget {
     }
 
     if (this.loaderType_ === 'main') {
-      const { hasAudio, hasVideo, isMuxed } = this.mediaInfo;
+      const { hasAudio, hasVideo, isMuxed } = mediaInfo;
 
       if (hasVideo && hasAudio && !this.audioDisabled_ && !isMuxed) {
         return this.sourceUpdater_.buffered();
