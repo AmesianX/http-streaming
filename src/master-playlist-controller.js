@@ -808,8 +808,8 @@ export class MasterPlaylistController extends videojs.EventTarget {
 
     if (this.mediaTypes_.AUDIO.activePlaylistLoader) {
       // if the audio playlist loader exists, then alternate audio is active
-      if (!this.mainSegmentLoader_.startingMediaInfo_ ||
-          this.mainSegmentLoader_.startingMediaInfo_.hasVideo) {
+      if (!this.mainSegmentLoader_.currentMediaInfo_ ||
+          this.mainSegmentLoader_.currentMediaInfo_.hasVideo) {
         // if we do not know if the main segment loader contains video yet or if we
         // definitively know the main segment loader contains video, then we need to wait
         // for both main and audio segment loaders to call endOfStream

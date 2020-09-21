@@ -633,14 +633,12 @@ export default class SegmentLoader extends videojs.EventTarget {
    *         TimeRange object representing the current buffered ranges
    */
   buffered_() {
-    const mediaInfo = this.currentMediaInfo_ || this.startingMediaInfo_;
-
-    if (!this.sourceUpdater_ || !mediaInfo) {
+    if (!this.sourceUpdater_ || !this.startingMediaInfo_) {
       return videojs.createTimeRanges();
     }
 
     if (this.loaderType_ === 'main') {
-      const { hasAudio, hasVideo, isMuxed } = mediaInfo;
+      const { hasAudio, hasVideo, isMuxed } = this.startingMediaInfo_;
 
       if (hasVideo && hasAudio && !this.audioDisabled_ && !isMuxed) {
         return this.sourceUpdater_.buffered();
